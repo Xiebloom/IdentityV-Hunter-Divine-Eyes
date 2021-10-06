@@ -4,5 +4,6 @@ changeMapButton.addEventListener('click', changeMap)
 
 function changeMap () {
     const img = document.querySelector('img')
-    img.src = './Maps/红教堂.png'
+    img.src = './Maps/redChurch.png'
+    console.log(img.src);
 }
