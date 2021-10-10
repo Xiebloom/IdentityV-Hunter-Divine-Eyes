@@ -1,8 +1,9 @@
-const markButton = document.querySelector('#mark-button')
 
-markButton.addEventListener('click', saveToTxt)
 
-function saveToTxt() {
+
+module.exports = function saveToTxt() {
+    const markButton = document.querySelector('#mark-button')
+    markButton.addEventListener('click', saveToTxt)
     const img = document.querySelector('img')
     console.log('点击监管者 & 4个求生者的坐标');
 

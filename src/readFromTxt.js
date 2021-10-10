@@ -1,8 +1,9 @@
-const readButton = document.querySelector('#read-button')
 
-readButton.addEventListener('click', readFronTxt)
 
-function readFronTxt() {
+module.exports = function readFronTxt() {
+    const readButton = document.querySelector('#read-button')
+
+    readButton.addEventListener('click', readFronTxt)
     // 1 读取 txt，并转化为对象 
     const mapPosInfo = JSON.parse(`{
         "军工厂":[
@@ -19,7 +20,7 @@ function readFronTxt() {
     // const hunterPos = document.createElement(...)
 
     // 3 TODO: 监管者点击后，显示出求生者位置（1个红点 + 4个蓝点）
-   
+
 }
-    
+
 
