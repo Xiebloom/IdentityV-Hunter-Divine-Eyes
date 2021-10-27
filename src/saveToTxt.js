@@ -1,6 +1,3 @@
-
-
-
 module.exports = function saveToTxt() {
     const markButton = document.querySelector('#mark-button')
     markButton.addEventListener('click', saveToTxt)

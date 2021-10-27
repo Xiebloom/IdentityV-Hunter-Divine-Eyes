@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path'); //路径管理模块,使用它可以高效获取项目路径,避免路径错误.
 
 /**
@@ -12,7 +13,30 @@ var config = {
     output:{
         path: path.join(__dirname,"./dist"),//指定输出的目录
         filename: 'bundle.js',//输出的文件的文件名
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'index.html'),
+            filename: "index.html"
+        })
+    ],
+    devServer: {
+        port: 8080,
+        static: path.join(__dirname, 'dist')
+    },
+    module: {
+        rules: [
+          {
+            test: /\.(png|jpg|gif)$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {},
+              },
+            ],
+          },
+        ],
+      },
 }
 
 /**

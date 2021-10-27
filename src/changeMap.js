@@ -1,6 +1,3 @@
-
-
-
 module.exports = function changeMap() {
     const changeMapButton = document.querySelector('#change-map')
 
