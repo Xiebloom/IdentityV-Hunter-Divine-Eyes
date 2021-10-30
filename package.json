@@ -22,12 +22,19 @@
   },
   "homepage": "https://github.com/Xiebloom/IdentityV-Hunter-Divine-Eyes#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.3",
+    "cors": "^2.8.5",
     "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.58.1",
     "webpack-cli": "^4.9.0"
   },
   "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.1",
     "file-loader": "^6.2.0",
+    "qs": "^6.10.1",
     "webpack-dev-server": "^4.3.1"
   }
 }

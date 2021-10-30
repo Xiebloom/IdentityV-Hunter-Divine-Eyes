@@ -1,9 +1,19 @@
-module.exports = function readFronTxt() {
+import axios from "axios";
+
+export function readFromTxt() {
     const readButton = document.querySelector("#read-button");
 
     readButton.addEventListener("click", readFronTxt);
 
     function readFronTxt() {
+        // 0 获取 txt
+        axios
+            .get('localhost:3000')
+            .then(res => {
+                console.log(res);
+            })
+
+
         // 1 读取 txt，并转化为对象
         const mapPosInfo = JSON.parse(`{
             "军工厂":[

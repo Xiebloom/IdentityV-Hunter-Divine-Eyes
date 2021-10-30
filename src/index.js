@@ -1,12 +1,13 @@
-import map1 from '../Maps/militiry.png'
+import map1 from '../Maps/factory.jpg'
+import { saveToTxt } from './saveToTxt'
+import { readFromTxt } from './readFromTxt'
+import { changeMap } from './changeMap'
 
-let changeMap = require('./changeMap.js')
-changeMap()
 
-let readFromTxt = require('./readFromTxt.js')
+// changeMap()
+
 readFromTxt()
 
-let saveToTxt = require('./saveToTxt.js')
 saveToTxt()
 
 const map = document.querySelector('.map');
