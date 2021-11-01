@@ -6,7 +6,7 @@ import { changeMap } from './changeMap'
 const map = document.querySelector('.map');
 map.src = map1;
 
-changeMap()
+changeMap('军工厂')
 
 readFromTxt()
 

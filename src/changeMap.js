@@ -1,4 +1,4 @@
-import redChurch from '../Maps/redChurch.png'
+import redChurch from '../Maps/red-church.jpg'
 
 export function changeMap() {
     const changeMapButton = document.querySelector('#change-map')

@@ -8,6 +8,7 @@ export function saveToTxt() {
 
 function setPos() {
     const img = document.querySelector('img')
+    const iconBox = document.querySelector('.icons')
     console.log('点击监管者 & 4个求生者的坐标');
 
     // 0 处理跨域问题
@@ -15,9 +16,10 @@ function setPos() {
 
     // 1 为图片绑定点击事件
     let positions = []
+    const mapName = window.prompt('输入地图名称');
     let partternCounts = window.prompt('输入可能的情况种数');
     let clickCounts = 5 * partternCounts;
-    const mapName = '军工厂'
+
     const mapPosInfo = {}
     mapPosInfo[mapName] = []
     img.addEventListener('mousedown', (event) => {
@@ -30,6 +32,13 @@ function setPos() {
                 event.offsetY
             ])
             console.log({ x: event.offsetX, y: event.offsetY });
+            let i = document.createElement("i");
+            // 添加
+            iconBox.appendChild(i);
+            i.innerHTML = clickCounts % 5 === 4 ? "o" : "x";
+            i.className = clickCounts % 5 === 4 ? "hunter" : "surviver"
+            i.style.top = event.offsetY - 29 / 1.25 + "px";
+            i.style.left = event.offsetX - 27 / 1.25 + "px";
         }
 
         if (clickCounts % 5 === 0) {
@@ -39,6 +48,10 @@ function setPos() {
                 surviver: positions.slice(1)
             })
             positions = []
+            console.log('下一组');
+            setTimeout(() => {
+                iconBox.innerHTML = ''
+            }, 1000)
         }
 
         if (clickCounts === 0) {
