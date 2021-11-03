@@ -12,3 +12,5 @@ changeMap()
 readFromTxt()
 
 saveToTxt()
+
+console.log('test');

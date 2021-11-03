@@ -1,22 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>监管者天眼</title>
     <style>
+        .box {
+            position: relative;
+        }
+        
         .map {
-            height: 80vh;
+            height: 600px;
+        }
+        
+        .hunter {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            font-size: 35px;
+            line-height: 40px;
+            text-align: center;
+            color: red;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+        
+        .surviver {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            font-size: 35px;
+            line-height: 40px;
+            text-align: center;
+            color: skyblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .icons {
+            position: absolute
         }
     </style>
+    </style>
 <script defer src="bundle.js"></script></head>
+
 <body>
     <button id="mark-button">start marking</button>
     <button id="read-button">read data</button>
     <button id="change-map">change map</button>
     <br>
-    <img src="./Maps/军工厂.png" alt="军工厂" class="map">
+    <div class="box">
+        <div class="icons"></div>
+        <img alt="map" class="map">
+    </div>
+
 </body>
 
 </html>
