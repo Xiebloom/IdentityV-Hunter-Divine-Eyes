@@ -2,17 +2,13 @@ import axios from "axios";
 
 export function readFromTxt() {
     const readButton = document.querySelector("#read-button");
-    readButton.addEventListener("click", readFronTxt);
+    readButton.addEventListener("click", () => { showPos() });
 };
 
-function readFronTxt(mapName) {
+function showPos() {
+
     // 0 获取 txt
     axios.defaults.headers.get['Content-Type'] = 'applicaiton/x-www-form-urlencoded'
-    axios
-        .get('http://localhost:3000')
-        .then(res => {
-            console.log(res);
-        })
 
     // 1 读取 txt，并转化为对象
     const mapPosInfo = JSON.parse(`{
@@ -22,9 +18,12 @@ function readFronTxt(mapName) {
 
 
     // 2 TODO: 将 mapInfo 的所有监管者的位置，显示在图片上（军工厂2个红点）
+    const mapName = document.querySelector('.map').getAttribute('name');
     const mapInfo = mapPosInfo[mapName];
+
     const box = document.querySelector(".icons");
     box.innerHTML = ''
+
     for (let j = 0; j < mapInfo.length; j++) {
         // 获得每个hunter的位置
         const hunterPos = mapInfo[j]["hunter"];

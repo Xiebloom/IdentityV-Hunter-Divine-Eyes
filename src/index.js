@@ -5,8 +5,9 @@ import { changeMap } from './changeMap'
 
 const map = document.querySelector('.map');
 map.src = map1;
+map.setAttribute('name', '军工厂')
 
-changeMap('军工厂')
+changeMap()
 
 readFromTxt()
 
